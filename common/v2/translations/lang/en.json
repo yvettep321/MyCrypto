@@ -482,8 +482,8 @@
     "SUBMITTING": "Submitting...",
     "ASSET": "Asset",
     "INVALID_AMOUNT_ERROR": "Amount should be a positive number",
-    "DASHBOARD_ACTIONS_BUY_ASSETS_TITLE": "Buy ETH",
-    "DASHBOARD_ACTIONS_BUY_ASSETS_SUBTITLE": "Hassle-free ETH, delivered directly to your account",
+    "DASHBOARD_ACTIONS_BUY_TITLE": "Buy Crypto Assets",
+    "DASHBOARD_ACTIONS_BUY_SUBTITLE": "Hassle-free cryptocurrency, delivered directly to your account",
     "DASHBOARD_ACTIONS_SWAP_ASSETS_TITLE": "Swap Assets",
     "DASHBOARD_ACTIONS_SWAP_ASSETS_SUBTITLE": "Exchange instantly without leaving MyCrypto",
     "DASHBOARD_ACTIONS_SEND_ASSETS_TITLE": "Send Assets",
@@ -653,6 +653,8 @@
     "SELECT_MEMBERSHIP": "Select Your Membership Plan",
     "MEMBERSHIP_DETAILS": "Membership Details",
     "COST": "Cost",
-    "NEW_MEMBER": "You are now a MyCrypto Member!"
+		"NEW_MEMBER": "You are now a MyCrypto Member!",
+		"CHECKOUT_CTA": "Purchase & Send to MyCrypto Account",
+		"CHECKOUT_OTHER_CTA": "Purchase & Send to Another Account"
   }
 }
