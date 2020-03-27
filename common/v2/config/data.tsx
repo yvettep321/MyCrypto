@@ -79,7 +79,7 @@ export const MOONPAY_PUBLIC_API_KEY = 'pk_live_0pl9XlYMsevvKP6xfEwdlU1nEylXYQ1j'
 export const MOONPAY_API_QUERYSTRING = `?${MOONPAY_PUBLIC_API_KEY}&colorCode=%23163150`;
 // tslint:disable-next-line: no-http-string
 export const BUY_MYCRYPTO_WEBSITE = 'http://supergeniustay.com/escape/buy.html'; //TODO: Swap out for buy.mycrypto.com when new site goes live.
-export const MOONPAY_SIGNER_API = 'https://moonpay.mycryptodev.com';
+export const MOONPAY_SIGNER_API = 'https://moonpay.mycryptodev.com/test';
 
 export enum Theme {
   DARK = 'dark',
