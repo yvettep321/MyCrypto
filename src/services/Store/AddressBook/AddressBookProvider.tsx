@@ -11,7 +11,7 @@ import {
   TAddress,
   NetworkId
 } from '@types';
-import { generateUUID } from '@utils';
+import { generateUUID, isSameAddress } from '@utils';
 import { DataContext, useContracts } from '@services/Store';
 
 interface IAddressBookContext {
@@ -72,19 +72,18 @@ export const AddressBookProvider: React.FC = ({ children }) => {
     },
     getContactByAddress: (address) => {
       return (
-        addressBook.find(
-          (contact: ExtendedAddressBook) => contact.address.toLowerCase() === address.toLowerCase()
-        ) || getContactFromContracts(address as TAddress)
+        addressBook.find((contact: ExtendedAddressBook) =>
+          isSameAddress(contact.address as TAddress, address as TAddress)
+        ) || getContactFromContracts(address)
       );
     },
     getContactByAddressAndNetworkId: (address, networkId) => {
       return (
         addressBook
           .filter((contact: ExtendedAddressBook) => contact.network === networkId)
-          .find(
-            (contact: ExtendedAddressBook) =>
-              contact.address.toLowerCase() === address.toLowerCase()
-          ) || getContactFromContracts(address as TAddress)
+          .find((contact: ExtendedAddressBook) =>
+            isSameAddress(contact.address as TAddress, address as TAddress)
+          ) || getContactFromContracts(address)
       );
     },
     getAccountLabel: ({ address, networkId }) => {
