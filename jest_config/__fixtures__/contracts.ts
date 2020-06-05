@@ -1,4 +1,4 @@
-const contracts = [
+const fcontracts = [
   {
     uuid: '7f4bee9a-b3a7-5f5d-9fdd-70a07fc30ccf',
     name: 'Colony Network',
@@ -477,4 +477,4 @@ const contracts = [
   }
 ];
 
-export default contracts;
+export default fcontracts;
