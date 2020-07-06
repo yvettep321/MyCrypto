@@ -23,6 +23,7 @@ export { default as fTxReceiptProvider } from './txReceiptProvider.json';
 export { default as fContracts } from './contracts';
 export { default as fTxParcels } from './txParcels';
 export { default as customNodeConfig } from './customNode';
+export { unknownReport, scamReport, verifiedReport, loadingReport } from './ptxreport';
 
 // Non-Web3 ERC20 Tx Items
 export { default as fERC20NonWeb3TxConfig } from './erc20NonWeb3TxConfig.json';
