@@ -70,19 +70,19 @@ export const AddressBookProvider: React.FC = ({ children }) => {
       setAddressBookRestore((prevState) => ({ ...prevState, [uuid]: addressBookToDelete }));
       model.destroy(addressBookToDelete!);
     },
-    getContactByAddress: (address) => {
+    getContactByAddress: (address: TAddress) => {
       return (
         addressBook.find((contact: ExtendedAddressBook) =>
-          isSameAddress(contact.address as TAddress, address as TAddress)
+          isSameAddress(contact.address as TAddress, address)
         ) || getContactFromContracts(address)
       );
     },
-    getContactByAddressAndNetworkId: (address, networkId) => {
+    getContactByAddressAndNetworkId: (address: TAddress, networkId) => {
       return (
         addressBook
           .filter((contact: ExtendedAddressBook) => contact.network === networkId)
           .find((contact: ExtendedAddressBook) =>
-            isSameAddress(contact.address as TAddress, address as TAddress)
+            isSameAddress(contact.address as TAddress, address)
           ) || getContactFromContracts(address)
       );
     },

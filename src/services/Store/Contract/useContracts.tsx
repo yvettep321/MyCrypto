@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { isSameAddress } from '@utils';
 
 import { ExtendedContract, LSKeys, TUuid, TAddress } from '@types';
 import { DataContext } from '@services/Store';
@@ -27,7 +28,8 @@ function useContracts() {
     return uuids.map((contractId) => contracts.find((c) => c.uuid === contractId)!).filter(Boolean);
   };
 
-  const getContractByAddress = (address: TAddress) => contracts.find((x) => x.address === address);
+  const getContractByAddress = (address: TAddress) =>
+    contracts.find((x: ExtendedContract) => isSameAddress(x.address, address));
 
   return {
     contracts,

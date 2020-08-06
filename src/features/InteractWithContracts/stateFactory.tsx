@@ -8,7 +8,16 @@ import {
   isSameAddress
 } from '@utils';
 import { CREATION_ADDRESS } from '@config';
-import { NetworkId, Contract, StoreAccount, ITxType, ITxStatus, TAddress, ITxHash } from '@types';
+import {
+  NetworkId,
+  Contract,
+  StoreAccount,
+  ITxType,
+  ITxStatus,
+  TAddress,
+  ITxHash,
+  TUuid
+} from '@types';
 import {
   getNetworkById,
   NetworkContext,
@@ -18,7 +27,6 @@ import {
   getResolvedENSAddress,
   EtherscanService,
   getIsValidENSAddressFunction,
-  AssetContext,
   AccountContext,
   useContracts
 } from '@services';
@@ -161,7 +169,7 @@ const InteractWithContractsFactory: TUseStateReducerFactory<InteractWithContract
 
   const selectExistingContract = (address: string) => {
     const existingContract = state.contracts.find((c) =>
-      isSameAddress(c.address as TAddress, address as TAddress)
+      isSameAddress(c.address, address as TAddress)
     );
     if (existingContract) {
       handleContractSelected(existingContract);
@@ -216,7 +224,7 @@ const InteractWithContractsFactory: TUseStateReducerFactory<InteractWithContract
     const uuid = generateContractUUID(state.network.id, state.contractAddress);
     const newContract = {
       abi: state.abi,
-      address: state.contractAddress,
+      address: state.contractAddress as TAddress,
       name: state.customContractName,
       label: state.customContractName,
       networkId: state.network.id,
