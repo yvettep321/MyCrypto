@@ -12,6 +12,9 @@ module.exports = {
   ],
 
   webpackFinal: async (config) => {
+    config.resolve.alias['core-js/modules'] = '@storybook/core/node_modules/core-js/modules';
+    config.resolve.alias['core-js/features'] = '@storybook/core/node_modules/core-js/features';
+
     // Remove storybooks handling of assets in favor of our own.
     config.module.rules = config.module.rules.filter(
       (rule) => !rule.test.toString().includes('svg')
