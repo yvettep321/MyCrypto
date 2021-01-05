@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { ProvidersWrapper } from 'test-utils';
 
 import { DEFAULT_NETWORK } from '@config';
+import { DataProvider } from '@services/Store';
 
-import AppProviders from '../AppProviders';
 import NetworkNodeDropdown from './NetworkNodeDropdown';
 
 const onEdit = () => undefined;
@@ -25,7 +25,7 @@ const withAdd = () => (
 storiesOf('NetworkNodesDropdown', module)
   .addDecorator((story) => (
     <ProvidersWrapper>
-      <AppProviders>{story()}</AppProviders>
+      <DataProvider>{story()}</DataProvider>
     </ProvidersWrapper>
   ))
   .add('Select', () => selectOnly(), {
