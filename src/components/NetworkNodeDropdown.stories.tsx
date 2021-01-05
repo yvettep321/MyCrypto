@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { storiesOf } from '@storybook/react';
+import { ProvidersWrapper } from 'test-utils';
 
 import { DEFAULT_NETWORK } from '@config';
 
@@ -22,7 +23,11 @@ const withAdd = () => (
 );
 
 storiesOf('NetworkNodesDropdown', module)
-  .addDecorator((story) => <AppProviders>{story()}</AppProviders>)
+  .addDecorator((story) => (
+    <ProvidersWrapper>
+      <AppProviders>{story()}</AppProviders>
+    </ProvidersWrapper>
+  ))
   .add('Select', () => selectOnly(), {
     design: {
       type: 'figma',
